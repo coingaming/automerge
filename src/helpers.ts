@@ -61,7 +61,7 @@ export function isApprovedByAllowedAuthor(review: Review, authorAssociations: Au
   return isReviewAuthorAllowed(review, authorAssociations)
 }
 
-export async function requiredStatusChecksForBranch(octokit: Octokit, branchName: string): Promise<string[]> {
+export async function requiredStatusChecksForBranch(octokit: Octokit, branchName: string): Promise<boolean> {
   const branch = (
     await octokit.rest.repos.getBranch({
       ...github.context.repo,
@@ -69,11 +69,7 @@ export async function requiredStatusChecksForBranch(octokit: Octokit, branchName
     })
   ).data
 
-  if (branch.protected === true && branch.protection.enabled === true) {
-    return branch.protection.required_status_checks?.contexts ?? []
-  }
-
-  return []
+  return branch.protected === true && branch.protection.enabled === true
 }
 
 // Loosely match a “do not merge” label's name.

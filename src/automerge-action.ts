@@ -139,7 +139,7 @@ export class AutomergeAction {
     const requiredStatusChecks = await requiredStatusChecksForBranch(this.octokit, baseBranch)
 
     // Only auto-merge if there is at least one required status check.
-    if (requiredStatusChecks.length < 1) {
+    if (requiredStatusChecks) {
       core.info(`Base branch '${baseBranch}' of pull request ${number} is not sufficiently protected.`)
       await this.disableAutoMerge(pullRequest)
       return
