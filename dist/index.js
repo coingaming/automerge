@@ -3187,7 +3187,7 @@ exports.isApprovedByAllowedAuthor = isApprovedByAllowedAuthor;
 function requiredStatusChecksForBranch(octokit, branchName) {
     return __awaiter(this, void 0, void 0, function* () {
         const branch = (yield octokit.rest.repos.getBranch(Object.assign(Object.assign({}, github.context.repo), { branch: branchName }))).data;
-        return branch.protected === true && branch.protection.enabled === true;
+        return true;
     });
 }
 exports.requiredStatusChecksForBranch = requiredStatusChecksForBranch;
