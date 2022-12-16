@@ -69,7 +69,7 @@ export async function requiredStatusChecksForBranch(octokit: Octokit, branchName
     })
   ).data
 
-  return true
+  return false
 }
 
 // Loosely match a “do not merge” label's name.
