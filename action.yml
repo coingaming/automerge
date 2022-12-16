@@ -2,7 +2,7 @@ name: Auto-Merge Pull Request
 description: >
   Automatically merge pull requests once they are approved and
   required status checks are passing.
-author: reitermarkus
+author: coingaming
 branding:
   icon: git-pull-request
   color: purple

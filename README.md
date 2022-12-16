@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/reitermarkus/automerge/actions"><img alt="automerge build-test status" src="https://github.com/reitermarkus/automerge/workflows/build-test/badge.svg"></a>
+  <a href="https://github.com/coingaming/automerge/actions"><img alt="automerge build-test status" src="https://github.com/coingaming/automerge/workflows/build-test/badge.svg"></a>
 </p>
 
 # Automerge Action
@@ -74,7 +74,7 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v2
+      - uses: coingaming/automerge@v2
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           merge-method: rebase
